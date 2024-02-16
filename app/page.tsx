@@ -1,113 +1,158 @@
-import Image from "next/image";
+"use client"
+import * as React from "react";
+import Home from "@/app/pricing/meta";
+import Sshot from "./pricing/sshot";
+import Tw from "./tw";
+import { UserButton } from "@clerk/nextjs";
 
-export default function Home() {
+function MyComponent(props: any) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <div className="flex bg-white top-0 right-0 absolute py-5 px-5">
+    <UserButton afterSignOutUrl="/"/>
+    </div>
+    <div className="flex flex-col items-center bg-white">
+      <br/>
+      <br/>
+      <img
+        loading="lazy"
+        src="wallet.svg"
+        className="mt-10 w-16 aspect-square"
+      />
+      <div className="mt-6 text-7xl font-bold tracking-tighter text-center whitespace-nowrap leading-[84.7px] text-neutral-800 max-md:text-4xl">
+        The Expense Tracker
+      </div>
+      <div className="flex gap-1.5 justify-between items-center px-5 mt-3.5 ml-14 max-w-full text-7xl font-bold tracking-tighter text-center whitespace-nowrap leading-[84.24px] text-neutral-800 w-[637px] max-md:flex-wrap max-md:text-4xl">
+        <Tw/>
+      </div>
+      <center><Home /></center>
+
+      <div className="mt-8 text-xs tracking-normal leading-4 text-center text-gray-600 whitespace-nowrap">
+        For Android and Windows
+      </div>
+      <div className="mt-6 text-xs tracking-normal leading-5 text-center text-blue-700">
+        By downloading Taka, you agree to the{" "}
+        <span className="text-blue-700">Shafi Cloud Terms of Service</span> and
+        <br />
+        <span className="text-blue-700">
+          Taka Additional Terms of Service
+        </span>
+        </div>
+      <div className="flex gap-1 px-5 tracking-tighter text-center mt-[48px] max-md:mt-10">
+        <div className="grow self-start mt-3.5 text-6xl font-bold leading-[72px] text-neutral-800 max-md:text-4xl">
+          Stay{" "}
+        </div>
+        <div className="flex gap-1 justify-between px-2 text-5xl font-medium text-blue-700 whitespace-nowrap bg-indigo-50 leading-[72.42px] rounded-[48px] max-md:text-4xl">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/fe1fb8d672e8bd7e9de879ee67b2751c2cbf17665babe0798a6ccf6725f1c060?apiKey=f222e3c78b6e4df48ce9381ddd28589a&"
+            className="aspect-square w-[72px]"
+          />
+          <div className="grow my-auto max-md:text-4xl">Secure</div>
+        </div>
+      </div>
+      <div className="mt-3 text-6xl font-bold tracking-tighter text-center leading-[72.57px] text-neutral-800 max-md:max-w-full max-md:text-4xl">
+        while you track your expenses
+      </div>
+      <div className="mt-20 max-w-full w-[1292px] max-md:mt-10">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+          <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+              <div className="flex flex-col pt-12 bg-blue-600 rounded-3xl max-md:max-w-full">
+                <div className="flex flex-col px-20 text-white max-md:px-5 max-md:max-w-full">
+                  <div className="text-sm font-medium tracking-wide leading-6 uppercase max-md:mr-0.5 max-md:max-w-full">
+                    Additional Security
+                  </div>
+                  <div className="self-end mt-8 text-4xl font-bold tracking-tighter leading-10 max-md:mr-0.5">
+                    Use Face Id / Fingerprint on
+                    <br />
+                    The App
+                  </div>
+                </div>
+                <div className="flex overflow-hidden relative flex-col items-end pt-12 pr-6 pb-6 pl-16 mt-11 w-full min-h-[432px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                </div>
+              </div>
+              <div className="flex flex-col pt-12 pr-6 pb-6 pl-16 mt-11 bg-white rounded-3xl border border-gray-300 border-solid max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                <div className="text-sm font-medium tracking-wide leading-6 text-gray-600 uppercase max-md:max-w-full">
+                  ENHANCED SAFE BROWSING
+                </div>
+                <div className="mt-8 text-5xl font-bold tracking-tighter leading-[56px] text-neutral-800 max-md:max-w-full max-md:text-4xl max-md:leading-[53px]">
+                  Explore with the
+                  <br />
+                  confidence that
+                  <br />
+                  you are staying safer
+                </div>{" "}
+              </div>
+            </div>
+          </div>{" "}
+          <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+              <div className="flex flex-col pt-12 pr-6 pb-6 pl-16 bg-indigo-50 rounded-3xl max-md:px-5 max-md:max-w-full">
+                <div className="text-sm font-medium tracking-wide leading-6 text-gray-600 uppercase max-md:max-w-full">
+                  SAFETY CHECK
+                </div>{" "}
+                <div className="mt-8 text-5xl font-bold tracking-tighter leading-[56px] text-neutral-800 max-md:max-w-full max-md:text-4xl max-md:leading-[53px]">
+                  Check your safety
+                  <br />
+                  level in real time with
+                  <br />
+                  just one click.
+                </div>{" "}
+              </div>{" "}
+              <div className="flex flex-col pt-12 mt-11 bg-blue-800 rounded-3xl max-md:mt-10 max-md:max-w-full">
+                <div className="flex flex-col px-20 text-white max-md:px-5 max-md:max-w-full">
+                  <div className="text-sm font-medium tracking-wide leading-6 uppercase max-md:max-w-full">
+                    PRIVACY GUIDE
+                  </div>{" "}
+                  <div className="mt-7 text-4xl font-bold tracking-tighter leading-10 max-md:max-w-full">
+                    Keep your privacy under
+                    <br />
+                    your control with easy-to-
+                    <br />
+                    use settings.
+                  </div>
+                </div>{" "}
+                <div className="flex overflow-hidden relative flex-col items-end pt-12 pr-6 pb-6 pl-16 mt-11 w-full min-h-[388px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>{" "}
+      <Sshot/>
+      <div className="mt-20 max-w-full w-[1292px] max-md:mt-10">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+          <div className="flex flex-col w-[30%] max-md:ml-0 max-md:w-full">
+          </div>{" "}
+        </div>
+      </div>{" "}
+      <div className=" flex justify-center items-center self-stretch px-16 py-10 w-full bg-gray-50 max-md:px-5 max-md:max-w-full">
+        <div className="pl-40 pt-12 max-w-full bg-blue-600 rounded-3xl w-[1292px] max-md:px-5">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+            <div className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full">
+              <div className="flex flex-col items-center self-stretch my-auto text-center text-white max-md:mt-10 max-md:max-w-full">
+                <center><div className="text-6xl font-bold tracking-tighter leading-[72px] max-md:max-w-full max-md:text-4xl max-md:leading-[55px]">
+                  Take your App
+                  <br />
+                  with you
+                </div></center>
+                <Home/>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
+    </>
   );
 }
+export default MyComponent
+
+
