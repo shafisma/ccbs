@@ -24,7 +24,7 @@ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 ```
 - The following things are required for authentication.
-- The following credentials can be found from (https://clerk.com)
+- The following credentials can be found from https://clerk.com
 
 ## Learn More
 
