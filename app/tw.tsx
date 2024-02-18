@@ -29,9 +29,9 @@ const Tw = () => {
     }, [charIndex, isDeleting, wordIndex, words]);
 
     return (
-        <div className="grow self-stretch my-auto max-md:text-4xl">
-        built to be <span className="grow self-stretch my-auto max-md:text-4xl text-blue-700">{text}
-            </span>
+        <div className="text-center items-center grow self-stretch my-auto max-md:text-4xl">
+        <center>built to be <span className="grow self-stretch my-auto max-md:text-4xl text-blue-700">{text}
+            </span></center>
             </div>
     );
 };

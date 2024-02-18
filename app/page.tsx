@@ -24,7 +24,7 @@ function MyComponent(props: any) {
         The Expense Tracker
       </div>
       <div className="flex gap-1.5 justify-between items-center px-5 mt-3.5 ml-14 max-w-full text-7xl font-bold tracking-tighter text-center whitespace-nowrap leading-[84.24px] text-neutral-800 w-[637px] max-md:flex-wrap max-md:text-4xl">
-        <Tw/>
+        <center><Tw/></center>
       </div>
       <center><Home /></center>
 
