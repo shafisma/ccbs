@@ -23,6 +23,9 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 ```
+- The following things are required for authentication.
+- The following credentials can be found from https://clerk.com.
+- You can also Disable auth by making some changes.
 
 ## Learn More
 
