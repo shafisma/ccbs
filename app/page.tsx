@@ -4,6 +4,7 @@ import Home from "@/app/pricing/meta";
 import Sshot from "./pricing/sshot";
 import Tw from "./tw";
 import { UserButton } from "@clerk/nextjs";
+import { Othercomp } from "@/components/component/othercomp";
 
 function MyComponent(props: any) {
   return (
@@ -148,6 +149,7 @@ function MyComponent(props: any) {
           </div>
         </div>
       </div>
+      <Othercomp />
 
     </div>
     </>

@@ -25,7 +25,7 @@ CLERK_SECRET_KEY=
 ```
 - The following things are required for authentication.
 - The following credentials can be found from https://clerk.com.
-- You can also Disable auth by making some changes.
+- You can also Disable auth by making some changes in Layout.tsx, page.tsx and that's it!
 
 ## Learn More
 
