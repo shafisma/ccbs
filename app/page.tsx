@@ -4,7 +4,6 @@ import Home from "@/app/pricing/meta";
 import Sshot from "./pricing/sshot";
 import Tw from "./tw";
 import { UserButton } from "@clerk/nextjs";
-import { Othercomp } from "@/components/component/othercomp";
 
 function MyComponent(props: any) {
   return (
@@ -17,9 +16,16 @@ function MyComponent(props: any) {
       <br/>
       <img
         loading="lazy"
+        src="logo.png"
+        className="mt-10 w-34"
+      />
+      <img
+        loading="lazy"
         src="wallet.svg"
         className="mt-10 w-16 aspect-square"
       />
+      <span className="text-start font-medium line-clamp-1">
+        </span>
       <div className="mt-6 text-7xl font-bold tracking-tighter text-center whitespace-nowrap leading-[84.7px] text-neutral-800 max-md:text-4xl">
         The Expense Tracker
       </div>
@@ -149,7 +155,6 @@ function MyComponent(props: any) {
           </div>
         </div>
       </div>
-      <Othercomp />
 
     </div>
     </>

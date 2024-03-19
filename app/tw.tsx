@@ -30,7 +30,7 @@ const Tw = () => {
 
     return (
         <div className="text-center items-center grow self-stretch my-auto max-md:text-4xl">
-        <center>built to be <span className="grow self-stretch my-auto max-md:text-4xl text-blue-700">{text}
+        <center>built to be <span className="grow self-stretch my-auto max-md:text-4xl text-[rgb(59,104,255)]">{text}
             </span></center>
             </div>
     );
