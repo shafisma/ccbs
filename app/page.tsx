@@ -134,27 +134,23 @@ function MyComponent(props: any) {
           </div>{" "}
         </div>
       </div>{" "}
-      <div className=" flex justify-center items-center self-stretch px-16 py-10 w-full bg-gray-50 max-md:px-5 max-md:max-w-full">
-        <div className="pl-40 pt-12 max-w-full bg-blue-600 rounded-3xl w-[1292px] max-md:px-5">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
-            <div className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full">
-              <div className="flex flex-col items-center self-stretch my-auto text-center text-white max-md:mt-10 max-md:max-w-full">
-                <center><div className="text-6xl font-bold tracking-tighter leading-[72px] max-md:max-w-full max-md:text-4xl max-md:leading-[55px]">
-                  Take your App
-                  <br />
-                  with you
-                </div></center>
-                <Home/>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-              </div>
-            </div>
-          </div>
+<br/>
+<div class="relative overflow-hidden">
+  <section class="flexCenter pb-100 w-full flex-col">
+    <div class="get-app rounded-5xl">
+      <div class="z-20 flex w-full flex-1 flex-col items-start justify-center gap-4">
+        <h2 class="bold-32 sm:bold-40 lg:bold-64 xl:max-w-[320px]">Take Your App</h2>
+        <p class="regular-16 text-gray-10">Available For Windows and Android ( IOS Will be added soon ).</p>
+        <center>
+        <div class="max-w-fit justify-center items-center whitespace-nowrap">
+          <button class="flexCenter btn_white w-full gap-3 rounded-full border" type="button"><label class="bold-16 cursor-pointer whitespace-nowrap">Download</label></button>
         </div>
+        </center>
       </div>
+    </div>
+  </section>
+</div>
+
 
     </div>
     </>
