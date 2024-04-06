@@ -8,10 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+            backgroundImage: {
+        'bg-img-1': "url('/img-1.png')",
+        'bg-img-2': "url('/img-2.png')",
+        'feature-bg': "url('/feature-bg.png')",
       },
       animation: {
         cursor: 'cursor .6s linear infinite alternate',
