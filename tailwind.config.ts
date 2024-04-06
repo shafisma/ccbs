@@ -8,11 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-            backgroundImage: {
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
-        'feature-bg': "url('/feature-bg.png')",
-      },
       animation: {
         cursor: 'cursor .6s linear infinite alternate',
         type: 'type 1.8s ease-out .8s 1 normal both',
