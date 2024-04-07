@@ -118,7 +118,8 @@ function MyComponent(props: any) {
             </div>{" "}
           </div>
         </div>{" "}
-        <br />
+      </div>
+              <br />
         <div className="relative overflow-hidden">
           <section className="flexCenter pb-100 w-full flex-col">
             <div className="get-app rounded-5xl">
@@ -140,7 +141,6 @@ function MyComponent(props: any) {
             </div>
           </section>
         </div>
-      </div>
     </>
   );
 }
