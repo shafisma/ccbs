@@ -129,21 +129,11 @@ function MyComponent(props: any) {
         <p className="regular-16 text-gray-10">Available on iOS and Android</p>
         <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
           <button
-            className="flexCenter btn_white w-full gap-3 rounded-full border"
+            className="flexCenter btn_white w-fit gap-3 rounded-full border"
             type="button"
           >
-            <img
-              alt="App Store"
-              loading="lazy"
-              width={24}
-              height={24}
-              decoding="async"
-              data-nimg={1}
-              style={{ color: "transparent" }}
-              src="/apple.svg"
-            />
             <label className="bold-16 cursor-pointer whitespace-nowrap">
-              App Store
+              Dowload For
             </label>
           </button>
         </div>
@@ -151,6 +141,7 @@ function MyComponent(props: any) {
     </div>
   </section>
 </div>
+
 
 
     </>
