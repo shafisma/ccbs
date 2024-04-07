@@ -119,7 +119,7 @@ function MyComponent(props: any) {
           </div>
         </div>{" "}
       </div>
- <div className="relative overflow-hidden m-1">
+<div className="relative overflow-hidden m-1">
   <section className="flexCenter w-full flex-col pb-100">
     <div className="get-app rounded-5xl">
       <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-4">
@@ -146,19 +146,12 @@ function MyComponent(props: any) {
               App Store
             </label>
           </button>
-          <button
-            className="flexCenter btn_dark_green_outline w-full gap-3 rounded-full border"
-            type="button"
-          >
-            <label className="bold-16 cursor-pointer whitespace-nowrap">
-              Play Store
-            </label>
-          </button>
         </div>
       </div>
     </div>
   </section>
 </div>
+
 
     </>
   );
