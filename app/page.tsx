@@ -119,28 +119,47 @@ function MyComponent(props: any) {
           </div>
         </div>{" "}
       </div>
-              <br />
-        <div className="relative overflow-hidden">
-          <section className="flexCenter pb-100 w-full flex-col">
-            <div className="get-app rounded-5xl">
-              <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-4">
-                <h2 className="bold-32 sm:bold-40 lg:bold-64 xl:max-w-[320px]">
-                  Take Your App
-                </h2>
-                <p className="regular-16 text-gray-10">
-                  Available For Windows and Android ( IOS Will be added soon ).
-                </p>
-                <div className="max-w-fit justify-center items-center whitespace-nowrap">
-                  <button className="flexCenter btn_white w-full gap-3 rounded-full border" type="button">
-                    <label className="bold-16 cursor-pointer whitespace-nowrap">
-                      Download
-                    </label>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
+ <div className="relative overflow-hidden m-1">
+  <section className="flexCenter w-full flex-col pb-100">
+    <div className="get-app rounded-5xl">
+      <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-4">
+        <h2 className="bold-32 sm:bold-40 lg:bold-64 xl:max-w-[320px]">
+          Get for free now!
+        </h2>
+        <p className="regular-16 text-gray-10">Available on iOS and Android</p>
+        <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
+          <button
+            className="flexCenter btn_white w-full gap-3 rounded-full border"
+            type="button"
+          >
+            <img
+              alt="App Store"
+              loading="lazy"
+              width={24}
+              height={24}
+              decoding="async"
+              data-nimg={1}
+              style={{ color: "transparent" }}
+              src="/apple.svg"
+            />
+            <label className="bold-16 cursor-pointer whitespace-nowrap">
+              App Store
+            </label>
+          </button>
+          <button
+            className="flexCenter btn_dark_green_outline w-full gap-3 rounded-full border"
+            type="button"
+          >
+            <label className="bold-16 cursor-pointer whitespace-nowrap">
+              Play Store
+            </label>
+          </button>
         </div>
+      </div>
+    </div>
+  </section>
+</div>
+
     </>
   );
 }
