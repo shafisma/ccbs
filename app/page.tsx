@@ -37,7 +37,7 @@ function MyComponent(props: any) {
       </div>
       <div className="mt-6 text-xs tracking-normal leading-5 text-center text-blue-700">
         By downloading Taka, you agree to the{" "}
-        <span className="text-blue-700">Shafi Cloud Terms of Service</span> and
+        <span className="text-blue-700">Shafi Cloud Terms of Service</span> and
         <br />
         <span className="text-blue-700">
           Taka Additional Terms of Service
@@ -132,16 +132,6 @@ function MyComponent(props: any) {
           </div>{" "}
         </div>
       </div>{" "}
-<br/>
-<div class="relative overflow-hidden">
-  <section class="flexCenter pb-100 w-full flex-col">
-    <div class="get-app rounded-5xl">
-      <div class="z-20 flex w-full flex-1 flex-col items-start justify-center gap-4">
-        <h2 class="bold-32 sm:bold-40 lg:bold-64 xl:max-w-[320px]">Take Your App</h2>
-        <p class="regular-16 text-gray-10">Available For Windows and Android ( IOS Will be added soon ).</p>
-        <center>
-        <div class="max-w-fit justify-center items-center whitespace-nowrap">
-          <button class="flexCenter btn_white w-full gap-3 rounded-full border" type="button"><label class="bold-16 cursor-pointer whitespace-nowrap">Download</label></button>
   <br />
   <div className="relative overflow-hidden">
     <section className="flexCenter pb-100 w-full flex-col">
@@ -166,11 +156,7 @@ function MyComponent(props: any) {
             </div>
           </center>
         </div>
-        </center>
       </div>
-    </div>
-  </section>
-</div>
     </section>
   </div>
 
