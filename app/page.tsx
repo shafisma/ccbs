@@ -1,11 +1,44 @@
 "use client";
+
 import * as React from "react";
+import { useRouter } from 'next/router';
 import Home from "@/app/pricing/meta";
 import Sshot from "./pricing/sshot";
 import Tw from "./tw";
 import { UserButton } from "@clerk/nextjs";
 
 function MyComponent(props: any) {
+  const router = useRouter();
+
+  const detectDeviceType = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    
+    if (/android/i.test(userAgent)) {
+      return 'Android';
+    }
+    
+    if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+      return 'iOS';
+    }
+    
+    return 'Other';
+  };
+
+  const handleDownload = () => {
+    const deviceType = detectDeviceType();
+    
+    switch (deviceType) {
+      case 'Android':
+        router.push('/android-download');
+        break;
+      case 'iOS':
+        router.push('/ios-download');
+        break;
+      default:
+        alert('Sorry, the app is not available for your device type.');
+    }
+  };
+
   return (
     <>
       <div className="flex bg-white top-0 right-0 absolute py-5 px-5">
@@ -14,8 +47,8 @@ function MyComponent(props: any) {
       <div className="flex flex-col items-center bg-white">
         <br />
         <br />
-        <img loading="lazy" src="logo.png" className="mt-10 w-34" />
-        <img loading="lazy" src="wallet.svg" className="mt-10 w-16 aspect-square" />
+        <img loading="lazy" src="logo.png" className="mt-10 w-34" alt="Logo" />
+        <img loading="lazy" src="wallet.svg" className="mt-10 w-16 aspect-square" alt="Wallet icon" />
         <span className="text-start font-medium line-clamp-1"></span>
         <div className="mt-6 text-7xl font-bold tracking-tighter text-center whitespace-nowrap leading-[84.7px] text-neutral-800 max-md:text-4xl">
           The Expense Tracker
@@ -25,7 +58,7 @@ function MyComponent(props: any) {
         </div>
         <Home />
         <div className="mt-8 text-xs tracking-normal leading-4 text-center text-gray-600 whitespace-nowrap">
-          For Android and Windows
+          For Android and iOS
         </div>
         <div className="mt-6 text-xs tracking-normal leading-5 text-center text-blue-700">
           By downloading Taka, you agree to the{" "}
@@ -38,7 +71,7 @@ function MyComponent(props: any) {
             Stay{" "}
           </div>
           <div className="flex gap-1 justify-between px-2 text-5xl font-medium text-blue-700 whitespace-nowrap bg-indigo-50 leading-[72.42px] rounded-[48px] max-md:text-4xl">
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fe1fb8d672e8bd7e9de879ee67b2751c2cbf17665babe0798a6ccf6725f1c060?apiKey=f222e3c78b6e4df48ce9381ddd28589a&" className="aspect-square w-[72px]" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fe1fb8d672e8bd7e9de879ee67b2751c2cbf17665babe0798a6ccf6725f1c060?apiKey=f222e3c78b6e4df48ce9381ddd28589a&" className="aspect-square w-[72px]" alt="Security icon" />
             <div className="grow my-auto max-md:text-4xl">Secure</div>
           </div>
         </div>
@@ -46,7 +79,7 @@ function MyComponent(props: any) {
           while you track your expenses
         </div>
         <div className="mt-20 max-w-full w-[1292px] max-md:mt-10">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
               <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
                 <div className="flex flex-col pt-12 bg-blue-600 rounded-3xl max-md:max-w-full">
@@ -73,29 +106,29 @@ function MyComponent(props: any) {
                     confidence that
                     <br />
                     you are staying safer
-                  </div>{" "}
+                  </div>
                 </div>
               </div>
-            </div>{" "}
+            </div>
             <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
               <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
                 <div className="flex flex-col pt-12 pr-6 pb-6 pl-16 bg-indigo-50 rounded-3xl max-md:px-5 max-md:max-w-full">
                   <div className="text-sm font-medium tracking-wide leading-6 text-gray-600 uppercase max-md:max-w-full">
                     SAFETY CHECK
-                  </div>{" "}
+                  </div>
                   <div className="mt-8 text-5xl font-bold tracking-tighter leading-[56px] text-neutral-800 max-md:max-w-full max-md:text-4xl max-md:leading-[53px]">
                     Check your safety
                     <br />
                     level in real time with
                     <br />
                     just one click.
-                  </div>{" "}
-                </div>{" "}
+                  </div>
+                </div>
                 <div className="flex flex-col pt-12 mt-11 bg-blue-800 rounded-3xl max-md:mt-10 max-md:max-w-full">
                   <div className="flex flex-col px-20 text-white max-md:px-5 max-md:max-w-full">
                     <div className="text-sm font-medium tracking-wide leading-6 uppercase max-md:max-w-full">
                       PRIVACY GUIDE
-                    </div>{" "}
+                    </div>
                     <div className="mt-7 text-4xl font-bold tracking-tighter leading-10 max-md:max-w-full">
                       Keep your privacy under
                       <br />
@@ -103,47 +136,45 @@ function MyComponent(props: any) {
                       <br />
                       use settings.
                     </div>
-                  </div>{" "}
+                  </div>
                   <div className="flex overflow-hidden relative flex-col items-end pt-12 pr-6 pb-6 pl-16 mt-11 w-full min-h-[388px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>{" "}
+        </div>
         <Sshot />
         <div className="mt-20 max-w-full w-[1292px] max-md:mt-10">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-[30%] max-md:ml-0 max-md:w-full">
-            </div>{" "}
+            </div>
           </div>
-        </div>{" "}
-      </div>
-<div className="relative overflow-hidden m-1">
-  <section className="flexCenter w-full flex-col pb-100">
-    <div className="get-app rounded-5xl">
-      <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-4">
-        <h2 className="bold-32 sm:bold-40 lg:bold-64 xl:max-w-[320px]">
-          Get for free now!
-        </h2>
-        <p className="regular-16 text-gray-10">Available on iOS and Android</p>
-        <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
-          <button
-            className="flexCenter btn_white w-fit gap-3 rounded-full border"
-            type="button"
-          >
-            <label className="bold-16 cursor-pointer whitespace-nowrap">
-              Dowload For
-            </label>
-          </button>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-
-
-
+      <div className="relative overflow-hidden m-1">
+        <section className="flexCenter w-full flex-col pb-100">
+          <div className="get-app rounded-5xl">
+            <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-4">
+              <h2 className="bold-32 sm:bold-40 lg:bold-64 xl:max-w-[320px]">
+                Get for free now!
+              </h2>
+              <p className="regular-16 text-gray-10">Available on iOS and Android</p>
+              <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
+                <button
+                  className="flexCenter btn_white w-fit gap-3 rounded-full border"
+                  type="button"
+                  onClick={handleDownload}
+                >
+                  <label className="bold-16 cursor-pointer whitespace-nowrap">
+                    Download For {detectDeviceType()}
+                  </label>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
