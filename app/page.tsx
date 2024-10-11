@@ -22,6 +22,14 @@ function MyComponent(props: any) {
       if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
         return 'iOS';
       }
+
+      if (/Win/i.test(userAgent)) {
+        return 'Windows';
+      }
+
+      if (/Linux/i.test(userAgent)) {
+        return 'Linux';
+      }
     }
     
     return 'Other';
@@ -30,17 +38,22 @@ function MyComponent(props: any) {
   const handleDownload = () => {
     const deviceType = detectDeviceType();
     
-    switch (deviceType) {
-      case 'Android':
-        router.push('/android-download');
-        break;
-      case 'iOS':
-        router.push('/ios-download');
-        break;
-      default:
-        alert('Sorry, the app is not available for your device type.');
+    const downloadLinks = {
+      Android: '/android-download',
+      iOS: '/ios-download',
+      Windows: '/windows-download',
+      Linux: '/linux-download'
+    };
+
+    if (deviceType in downloadLinks) {
+      router.push(downloadLinks[deviceType as keyof typeof downloadLinks]);
+    } else {
+      alert(`Sorry, the app is not available for your device type (${deviceType}).`);
     }
   };
+
+  const deviceType = detectDeviceType();
+  const isAvailable = ['Android', 'iOS', 'Windows', 'Linux'].includes(deviceType);
 
   return (
     <>
@@ -61,7 +74,7 @@ function MyComponent(props: any) {
         </div>
         <Home />
         <div className="mt-8 text-xs tracking-normal leading-4 text-center text-gray-600 whitespace-nowrap">
-          For Android and iOS
+          For Android, iOS, Windows, and Linux
         </div>
         <div className="mt-6 text-xs tracking-normal leading-5 text-center text-blue-700">
           By downloading Taka, you agree to the{" "}
@@ -162,17 +175,25 @@ function MyComponent(props: any) {
               <h2 className="bold-32 sm:bold-40 lg:bold-64 xl:max-w-[320px]">
                 Get for free now!
               </h2>
-              <p className="regular-16 text-gray-10">Available on iOS and Android</p>
+              <p className="regular-16 text-gray-10">
+                Available on iOS, Android, Windows, and Linux
+              </p>
               <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
-                <button
-                  className="flexCenter btn_white w-fit gap-3 rounded-full border"
-                  type="button"
-                  onClick={handleDownload}
-                >
-                  <label className="bold-16 cursor-pointer whitespace-nowrap">
-                    Download For {detectDeviceType()}
-                  </label>
-                </button>
+                {isAvailable ? (
+                  <button
+                    className="flexCenter btn_white w-fit gap-3 rounded-full border"
+                    type="button"
+                    onClick={handleDownload}
+                  >
+                    <label className="bold-16 cursor-pointer whitespace-nowrap">
+                      Download For {deviceType}
+                    </label>
+                  </button>
+                ) : (
+                  <div className="text-red-500 bold-16">
+                    Sorry, the app is not available for your device type ({deviceType}).
+                  </div>
+                )}
               </div>
             </div>
           </div>
