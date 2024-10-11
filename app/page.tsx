@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import Home from "@/app/pricing/meta";
 import Sshot from "./pricing/sshot";
 import Tw from "./tw";
@@ -11,14 +12,16 @@ function MyComponent(props: any) {
   const router = useRouter();
 
   const detectDeviceType = () => {
-    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-    
-    if (/android/i.test(userAgent)) {
-      return 'Android';
-    }
-    
-    if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
-      return 'iOS';
+    if (typeof window !== 'undefined') {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+      
+      if (/android/i.test(userAgent)) {
+        return 'Android';
+      }
+      
+      if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+        return 'iOS';
+      }
     }
     
     return 'Other';
@@ -179,4 +182,5 @@ function MyComponent(props: any) {
   );
 }
 
-export default MyComponent;
+// Wrap the component with dynamic import to ensure it's only rendered on the client side
+export default dynamic(() => Promise.resolve(MyComponent), { ssr: false });
